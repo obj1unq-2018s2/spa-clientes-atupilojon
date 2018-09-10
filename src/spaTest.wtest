@@ -1,0 +1,31 @@
+
+import personas.*
+import spa.*
+
+describe "dia de spa"{
+	test "ramiro en el spa" {
+		spa.atender(ramiro)
+		assert.equals(4, ramiro.contracturacion())
+		assert.equals(false, ramiro.pielGrasosa())
+	
+	}
+	
+	test "olivia en el spa" {
+		spa.atender(olivia)
+		assert.equals(9, olivia.gradoDeConcentracion())
+	}
+
+	test "bruno en el spa" {
+		spa.atender(bruno)
+		assert.equals(true, bruno.esFeliz())
+		assert.equals(true, bruno.tieneSed())
+		assert.equals(54500, bruno.peso())
+	}
+	
+	test "ramiro va dos veces al spa" {
+		spa.atender(ramiro)
+		spa.atender(ramiro)
+		assert.equals(2, ramiro.contracturacion())
+		assert.equals(false, ramiro.pielGrasosa())
+	}
+}
